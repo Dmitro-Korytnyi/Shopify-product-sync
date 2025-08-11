@@ -1,0 +1,35 @@
+# Laravel & PHP
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+.env
+.env.backup
+.env.*
+
+# Composer
+composer.lock
+
+# NPM / Yarn
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDE & OS files
+/.idea
+/.vscode
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Logs & dumps
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+dump.rdb
+
+# Testing
+.phpunit.result.cache
+coverage
