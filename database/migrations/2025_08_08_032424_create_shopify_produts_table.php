@@ -15,6 +15,8 @@ return new class extends Migration {
             $table->string('shopify_id')->unique();
             $table->string('title');
             $table->string('handle')->nullable();
+            $table->string('image_url')->nullable();
+            $table->string('image_alt')->nullable();
             $table->text('description_html')->nullable();
             $table->json('variants')->nullable();
             $table->timestamps();

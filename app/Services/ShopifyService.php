@@ -13,7 +13,7 @@ class ShopifyService
     {
         $this->shop = config('services.shopify.shop');
         $this->token = config('services.shopify.token');
-        $this->apiVersion = config('services.shopify.version', '2025-01');
+        $this->apiVersion = config('services.shopify.version', '2025-07');
     }
 
     protected function endpoint(): string
@@ -38,21 +38,28 @@ class ShopifyService
     {
         $query = <<<'GRAPHQL'
         query($first: Int!){
-        products(first: $first) {
-            edges {
-            node {
-                id
-                title
-                handle
-                descriptionHtml
-                variants(first: 10) {
+            products(first: $first) {
                 edges {
-                    node { id sku price inventoryQuantity }
+                node {
+                    id
+                    title
+                    handle
+                    descriptionHtml
+                    variants(first: 10) {
+                        edges {
+                            node { id sku price inventoryQuantity }
+                        }
+                    }
+                    images(first: 5) {
+                        nodes {
+                            id
+                            url
+                            altText
+                        }
+                    }
                 }
                 }
             }
-            }
-        }
         }
         GRAPHQL;
         $res = $this->query($query, ['first' => $first]);

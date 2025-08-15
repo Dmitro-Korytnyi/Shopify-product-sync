@@ -61,5 +61,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 =======
-# Shopify-product-sync
->>>>>>> 281324fb7156b550d1b4c81b94236c7a459ff0c0
+# Shopify Product Sync
+
+Sync products from your Shopify store into your Laravel application.
+
+## Setup
+
+Update your Shopify store credentials in your `.env` file:
+
+```env
+SHOPIFY_SHOP=your-shop-name.myshopify.com
+SHOPIFY_API_VERSION=2025-07
+SHOPIFY_ACCESS_TOKEN=your-shopify-access-token
